@@ -91,9 +91,9 @@ def inputprocessor():
         predicted_outcome = classifier.predict(test_data)
 
         
-        if predicted_outcome >= 0.6:
+        if predicted_outcome >= 0.7:
             predicted_outcome = 1
-        elif predicted_outcome < 0.6:
+        elif predicted_outcome < 0.7:
             predicted_outcome = 0
 
         if predicted_outcome == 0:
