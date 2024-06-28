@@ -73,19 +73,10 @@ def inputprocessor():
         #print(Y_train)
         #print(Data)
 
-        params = {
-            'learning_rate':[0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50],
-            'subsample': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0],
-            'colsample_bynode': [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]
-
-        }
-
         #sns.heatmap(Data.corr())
         #plt.show()
         #accuracy = 0.739
-
-
-    
+        
         classifier = XGBRegressor(learning_rate = 0.05, subsample = 1.0, colsample_bynode = 0.4)
         classifier.fit(X_train, Y_train)
         predicted_outcome = classifier.predict(test_data)
